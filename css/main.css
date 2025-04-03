@@ -561,7 +561,6 @@ select {
 	padding: 1.5rem 2.5rem;
 	border: 0;
 	outline: none;
-	vertical-align: middle;
 	color: rgba(0, 0, 0, 0.7);
 	font-family: "roboto-regular", sans-serif;
 	font-size: 1.5rem;
@@ -1704,7 +1703,6 @@ header .logo a {
 .main-navigation li {
 	position: relative;
 	display: inline-block;
-	float: left;
 	margin-right: 22px;
 	padding: 0;
 }
@@ -3279,4 +3277,14 @@ footer ul li {
  * ----------------------------------------------- */
 #cForm {
 	margin-top: 3.6rem;
+}
+
+/* 16. add visibility fix to avoid flickering
+ * ----------------------------------------------- */
+
+.bricks-wrapper {
+    visibility: hidden;
+}
+body.loaded .bricks-wrapper {
+    visibility: visible;
 }

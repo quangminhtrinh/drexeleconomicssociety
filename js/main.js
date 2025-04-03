@@ -628,3 +628,20 @@
  
 
 })(jQuery);
+
+/* Create a sorting script
+* ------------------------------------------------------ */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.querySelector('.bricks-wrapper');
+    const articles = Array.from(wrapper.querySelectorAll('article[data-date]'));
+
+    articles.sort((a, b) => {
+        const dateA = new Date(a.dataset.date);
+        const dateB = new Date(b.dataset.date);
+        return dateB - dateA; // Most recent first
+    });
+
+    articles.forEach(article => wrapper.appendChild(article));
+	document.body.classList.add("loaded");
+});
